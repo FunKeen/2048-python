@@ -1,4 +1,5 @@
 import random
+from os import system
 
 
 class GameGrid:
@@ -71,14 +72,18 @@ class GameGrid:
     def do_next(self, direction):
         check = self.check(direction)
         if check == 3:
+            system('cls')
             self.insert()
             self.print_grid()
         elif check == 2:
+            system('cls')
             self.print_grid()
             print('you win!')
         elif check == 1:
+            system('cls')
             self.print_grid()
         elif check == 0:
+            system('cls')
             print('game over!')
 
     def check(self, direction):
@@ -129,4 +134,4 @@ class GameGrid:
                     self.print_grid()
 
 
-GameGrid(4, 4, 8).start()
+GameGrid(4, 4, 2048).start()
